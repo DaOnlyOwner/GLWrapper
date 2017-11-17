@@ -1,5 +1,92 @@
 {
-  "variant": null,
-  "activeEnvironments": [],
-  "codeModel": null
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [
+    "MinGW - E:\\msys64\\mingw64"
+  ],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "E:/C++Projects/GLWrapper/build",
+            "name": "Project",
+            "sourceDirectory": "E:/C++Projects/GLWrapper",
+            "targets": [
+              {
+                "artifacts": [
+                  "E:/C++Projects/GLWrapper/build/libGLWrapper.dll",
+                  "E:/C++Projects/GLWrapper/build/libGLWrapper.dll.a",
+                  "E:/C++Projects/GLWrapper/build/libGLWrapper.pdb"
+                ],
+                "buildDirectory": "E:/C++Projects/GLWrapper/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g  ",
+                    "defines": [
+                      "GLWrapper_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/C++Projects/GLWrapper/include"
+                      },
+                      {
+                        "path": "E:/C++Projects/GLWrapper/glad/include"
+                      },
+                      {
+                        "path": "E:/msys64/mingw64/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "C",
+                    "sources": [
+                      "glad/src/glad.c"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-g  ",
+                    "defines": [
+                      "GLWrapper_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "E:/C++Projects/GLWrapper/include"
+                      },
+                      {
+                        "path": "E:/C++Projects/GLWrapper/glad/include"
+                      },
+                      {
+                        "path": "E:/msys64/mingw64/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/HelperFuncs.cpp",
+                      "src/Loader.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libGLWrapper.dll",
+                "linkLibraries": "-lassimp -lgcc_eh -lgcc_eh -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+                "linkerLanguage": "CXX",
+                "name": "GLWrapper",
+                "sourceDirectory": "E:/C++Projects/GLWrapper",
+                "type": "SHARED_LIBRARY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.3336388206153198",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
 }
