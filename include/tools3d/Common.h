@@ -29,29 +29,5 @@ typedef GLdouble f64;
 	UShort = GL_UNSIGNED_SHORT
 };*/
 
-struct VertexLayoutInfo
-{
-	u32 NumComponents;
-	u32 Stride = 1;
-	u32 Offset;
-	GLenum Type;
-	GLboolean Normalized = 0;
-};
-
-struct Vec2
-{
-	f32 x, y;
-};
-
-struct Vec3
-{
-	f32 x, y, z;
-};
-
-struct Vec4
-{
-	f32 x, y, z, v;
-};
-
 
 #define MAKE_EXCEPTION(name) struct name : std::logic_error {explicit name(const std::string& arg) :logic_error(arg) {} }

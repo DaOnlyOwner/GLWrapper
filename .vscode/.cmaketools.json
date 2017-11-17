@@ -21,16 +21,16 @@
             "targets": [
               {
                 "artifacts": [
-                  "E:/C++Projects/GLWrapper/build/libGLWrapper.dll",
-                  "E:/C++Projects/GLWrapper/build/libGLWrapper.dll.a",
-                  "E:/C++Projects/GLWrapper/build/libGLWrapper.pdb"
+                  "E:/C++Projects/GLWrapper/build/libtools3d.dll",
+                  "E:/C++Projects/GLWrapper/build/libtools3d.dll.a",
+                  "E:/C++Projects/GLWrapper/build/libtools3d.pdb"
                 ],
                 "buildDirectory": "E:/C++Projects/GLWrapper/build",
                 "fileGroups": [
                   {
                     "compileFlags": "-g  ",
                     "defines": [
-                      "GLWrapper_EXPORTS"
+                      "tools3d_EXPORTS"
                     ],
                     "includePath": [
                       {
@@ -52,7 +52,7 @@
                   {
                     "compileFlags": "-g  ",
                     "defines": [
-                      "GLWrapper_EXPORTS"
+                      "tools3d_EXPORTS"
                     ],
                     "includePath": [
                       {
@@ -73,10 +73,10 @@
                     ]
                   }
                 ],
-                "fullName": "libGLWrapper.dll",
+                "fullName": "libtools3d.dll",
                 "linkLibraries": "-lassimp -lgcc_eh -lgcc_eh -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
                 "linkerLanguage": "CXX",
-                "name": "GLWrapper",
+                "name": "tools3d",
                 "sourceDirectory": "E:/C++Projects/GLWrapper",
                 "type": "SHARED_LIBRARY"
               }
@@ -85,7 +85,7 @@
         ]
       }
     ],
-    "cookie": "0.3336388206153198",
+    "cookie": "0.8509927561606194",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

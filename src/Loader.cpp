@@ -1,10 +1,10 @@
-#include "GLWrapper/Loader.h"
+#include "tools3d/Loader.h"
 
 #include "assimp/Importer.hpp"
 #include "assimp/postprocess.h"
 #include "assimp/mesh.h"
 #include "assimp/scene.h"
-#include "GLWrapper/Common.h"
+#include "tools3d/Common.h"
 
 namespace doo
 {
@@ -28,7 +28,7 @@ namespace doo
 				v.Normal = normal;
 
 				p_myMesh->Vertices.push_back(v);
-				
+
 			}
 		}
 
@@ -65,13 +65,13 @@ namespace doo
 
 			p_model->Name = p_node->mName.C_Str();
 
-				for (u32 i = 0; i < p_node->mNumChildren; i++)
-				{
-					Model* toBeAdded = new Model();
-					std::unique_ptr<Model> ptr(toBeAdded);
-					createModel(p_node->mChildren[i], p_scene, toBeAdded, localTransform);
-					p_model->Children.push_back(std::move(ptr));
-				}
+			for (u32 i = 0; i < p_node->mNumChildren; i++)
+			{
+				Model* toBeAdded = new Model();
+				std::unique_ptr<Model> ptr(toBeAdded);
+				createModel(p_node->mChildren[i], p_scene, toBeAdded, localTransform);
+				p_model->Children.push_back(std::move(ptr));
+			}
 		}
 
 		// TODO: Error handling
@@ -84,7 +84,7 @@ namespace doo
 			if (!scene->HasMeshes()) throw import_error("Specified file contains no meshes.");
 
 			Model* model = new Model;
-			
+
 
 			createModel(scene->mRootNode, scene, model, scene->mRootNode->mTransformation);
 			return model;

@@ -267,9 +267,9 @@ endfunction()
 
 #----------------------------------------------------- Actual find package
 
-libfind_pkg_detect(GLWRAPPER GLWrapper FIND_PATH GLWrapper FIND_LIBRARY GLWrapper)
-libfind_process(GLWrapper GLWrapper)
+libfind_pkg_detect(TOOLS3D tools3d FIND_PATH tools3d FIND_LIBRARY tools3d)
+libfind_process(tools3d tools3d)
 
 
-message("GLWrapper headers are here: ${GLWRAPPER_INCLUDE_DIR}")
-message("GLWrapper library is here: ${GLWRAPPER_LIBRARY}")
+message("tools3d headers are here: ${TOOLS3D_INCLUDE_DIR}")
+message("tools3d library is here: ${TOOLS3D_LIBRARY}")

@@ -24,9 +24,19 @@ namespace doo
 
 		struct ShaderSrcCode
 		{
-			const char* Code;
+			std::string Code;
 			GLenum Type;
 		};
+
+		struct VertexLayoutInfo
+		{
+			u32 NumComponents;
+			u32 Stride = 1;
+			u32 Offset;
+			GLenum Type;
+			GLboolean Normalized = 0;
+		};
+
 
 		struct InterleavedLayout
 		{

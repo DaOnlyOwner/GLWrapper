@@ -10,6 +10,21 @@ namespace doo
 	{
 		MAKE_EXCEPTION(import_error);
 
+		struct Vec2
+		{
+			f32 x, y;
+		};
+
+		struct Vec3
+		{
+			f32 x, y, z;
+		};
+
+		struct Vec4
+		{
+			f32 x, y, z, v;
+		};
+
 		struct Vertex
 		{
 			Vec3 Position;
@@ -34,7 +49,6 @@ namespace doo
 			std::string Name;
 		};
 
-		//TODO: Need to transform the child meshes.
 		Model* LoadModel(const char* filename);
 	}
 

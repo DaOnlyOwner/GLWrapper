@@ -1,4 +1,4 @@
-#include "GLWrapper/HelperFuncs.h"
+#include "tools3d/HelperFuncs.h"
 #include <string>
 
 inline ObjId compileShader(const char* p_code, GLenum p_type)
@@ -26,7 +26,7 @@ ObjId doo::gl::CreateProgram(ShaderSrcCode* p_code, u32 p_amount)
 
 	for(int i = 0; i<p_amount; i++)
 	{
-		ObjId shaderId = compileShader(p_code[i].Code, p_code[i].Type);
+		ObjId shaderId = compileShader(p_code[i].Code.c_str(), p_code[i].Type);
 		savedIds[i] = shaderId;
 		glAttachShader(programOut, shaderId);
 	}
