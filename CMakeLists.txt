@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 file(GLOB_RECURSE SOURCES glad/*.c src/*.cpp)
-file(GLOB_RECURSE INCLUDES glad/*.h include/*.h)
+file(GLOB_RECURSE INCLUDES include/*.h)
 
 set(CMAKE_INSTALL_PREFIX "E:/msys64/mingw64" CACHE INTERNAL "") # For now, later remove this
 
@@ -26,3 +26,5 @@ RUNTIME DESTINATION bin
 LIBRARY DESTINATION lib
 ARCHIVE DESTINATION lib)
 install(FILES ${INCLUDES} DESTINATION include/GLWrapper)
+install(FILES "glad/include/glad/glad.h" DESTINATION include/GLWrapper/glad)
+install(FILES "glad/include/KHR/khrplatform.h" DESTINATION include/GLWrapper/glad/KHR)

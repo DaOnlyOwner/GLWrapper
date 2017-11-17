@@ -19,16 +19,23 @@ namespace doo
 			//f32 TextCoords[2];
 		};
 
-		struct VertexCollection
+
+		struct Mesh
 		{
-			std::vector<std::unique_ptr<VertexCollection>> ChildCollections;
 			std::vector<Vertex> Vertices;
 			std::vector<u32> Indices;
-
+			std::string Name;
 		};
-		
+
+		struct Model
+		{
+			std::vector<Mesh> LocalMeshes;
+			std::vector<std::unique_ptr<Model>> Children;
+			std::string Name;
+		};
+
 		//TODO: Need to transform the child meshes.
-		VertexCollection* LoadModel(const char* filename);
+		Model* LoadModel(const char* filename);
 	}
 
 }
