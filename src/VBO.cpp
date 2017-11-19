@@ -1,4 +1,4 @@
-#include "tools3d/HelperFuncs.h"
+#include "tools3d/VBO.h"
 #include <string>
 
 inline ObjId compileShader(const char* p_code, GLenum p_type)
@@ -51,13 +51,13 @@ ObjId doo::gl::CreateProgram(ShaderSrcCode* p_code, u32 p_amount)
 }
 
 
-doo::gl::VboId doo::gl::CreateStaticVertexBuffer(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const InterleavedLayout& p_layout)
+doo::gl::VboId doo::gl::CreateStaticVBO(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const InterleavedLayout& p_layout)
 {
 	const VertexLayoutInfo* info = p_layout.GetInterleavedLayoutInfo();
-	return CreateVertexBuffer(p_vertices, p_vertSize, p_indices, p_indexSize, info, p_layout.GetNumAttribPtrs(), GL_STATIC_DRAW);
+	return CreateVBO(p_vertices, p_vertSize, p_indices, p_indexSize, info, p_layout.GetNumAttribPtrs(), GL_STATIC_DRAW);
 }
 
-doo::gl::VboId doo::gl::CreateVertexBuffer(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const VertexLayoutInfo* p_layout, u32 p_amount, GLenum p_accessModifier)
+doo::gl::VboId doo::gl::CreateVBO(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const VertexLayoutInfo* p_layout, u32 p_amount, GLenum p_accessModifier)
 {
 	u32 vbo;
 	u32 vao;

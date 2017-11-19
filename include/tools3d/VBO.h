@@ -74,17 +74,18 @@ namespace doo
 		};
 
 		ObjId CreateProgram(ShaderSrcCode* p_code, u32 p_amount);
-		VboId CreateStaticVertexBuffer(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const InterleavedLayout& p_layout);
+		VboId CreateStaticVBO(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const InterleavedLayout& p_layout);
 
 
 		
-		VboId CreateVertexBuffer(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const VertexLayoutInfo* p_layout, u32 p_amount, GLenum
+		VboId CreateVBO(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const VertexLayoutInfo* p_layout, u32 p_amount, GLenum
 		                         p_accessModifier = GL_STATIC_DRAW);
 
 		template<typename TVerts>
-		VboId CreateStaticVertexBuffer(std::vector<TVerts> p_verts, std::vector<u32> p_indices, const InterleavedLayout& p_layout)
+		VboId CreateStaticVBO(std::vector<TVerts> p_verts, std::vector<u32> p_indices, const InterleavedLayout& p_layout)
 		{
-			return CreateStaticVertexBuffer(p_verts.data(), p_verts.data(), p_indices.data(), p_indices.size(), p_layout);
+			return CreateStaticVBO(p_verts.data(), p_verts.data(), p_indices.data(), p_indices.size(), p_layout);
 		}
+
 	}
 }

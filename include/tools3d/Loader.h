@@ -8,7 +8,7 @@ namespace doo
 {
 	namespace loader
 	{
-		MAKE_EXCEPTION(import_error);
+		MAKE_EXCEPTION(ImportError);
 
 		struct Vec2
 		{

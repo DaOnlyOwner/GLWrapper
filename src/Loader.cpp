@@ -80,8 +80,8 @@ namespace doo
 			Assimp::Importer importer;
 			const aiScene* scene = importer.ReadFile(p_filename, aiProcessPreset_TargetRealtime_MaxQuality);
 
-			if (!scene) throw import_error("Couldn't load or read file: " + std::string(importer.GetErrorString()));
-			if (!scene->HasMeshes()) throw import_error("Specified file contains no meshes.");
+			if (!scene) throw ImportError("Couldn't load or read file: " + std::string(importer.GetErrorString()));
+			if (!scene->HasMeshes()) throw ImportError("Specified file contains no meshes.");
 
 			Model* model = new Model;
 
