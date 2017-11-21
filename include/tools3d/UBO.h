@@ -2,7 +2,14 @@
 
 #include "Common.h"
 
-ObjId CreateUBO(const void* p_data, u32 p_dataSize, GLenum p_accessModifiers);
+
+namespace doo
+{
+	namespace gl
+	{
+		ObjId CreateUBO(const void* p_data, u32 p_dataSize, GLenum p_accessModifiers);
+	}
+}
 
 /* Padding rules:
 Vec4 (16 byte size) (16 byte alignment)

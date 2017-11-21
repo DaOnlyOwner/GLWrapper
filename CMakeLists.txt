@@ -5,7 +5,8 @@ file(GLOB_RECURSE INCLUDES include/*.h)
 set(CMAKE_INSTALL_PREFIX "E:/msys64/mingw64" CACHE INTERNAL "") # For now, later remove this
 
 find_package(assimp REQUIRED)
-find_package(glm REQUIRED)
+#find_package(glm REQUIRED)
+#find_package(jsoncpp REQUIRED)
 
 add_library(tools3d SHARED ${SOURCES})
 
@@ -19,6 +20,10 @@ target_link_libraries(tools3d ${ASSIMP_LIBRARIES})
 # GLM - For later, I don't need it right now.
 #target_include_directories(tools3d PUBLIC ${GLM_INCLUDE_DIRS})
 #target_link_libraries(tools3d ${GLM_LIBRARY})
+
+# JSONCPP - for parsing the scene file.
+#target_include_directories(tools3d PRIVATE ${JSONCPP_INCLUDE_DIRS})
+#target_link_libraries(tools3d ${JSONCPP_LIBRARY})
 
 
 install(TARGETS tools3d

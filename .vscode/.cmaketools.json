@@ -15,17 +15,17 @@
         "name": "Debug",
         "projects": [
           {
-            "buildDirectory": "E:/C++Projects/GLWrapper/build",
+            "buildDirectory": "E:/C++Projects/tools3d/build",
             "name": "Project",
-            "sourceDirectory": "E:/C++Projects/GLWrapper",
+            "sourceDirectory": "E:/C++Projects/tools3d",
             "targets": [
               {
                 "artifacts": [
-                  "E:/C++Projects/GLWrapper/build/libtools3d.dll",
-                  "E:/C++Projects/GLWrapper/build/libtools3d.dll.a",
-                  "E:/C++Projects/GLWrapper/build/libtools3d.pdb"
+                  "E:/C++Projects/tools3d/build/libtools3d.dll",
+                  "E:/C++Projects/tools3d/build/libtools3d.dll.a",
+                  "E:/C++Projects/tools3d/build/libtools3d.pdb"
                 ],
-                "buildDirectory": "E:/C++Projects/GLWrapper/build",
+                "buildDirectory": "E:/C++Projects/tools3d/build",
                 "fileGroups": [
                   {
                     "compileFlags": "-g  ",
@@ -34,10 +34,10 @@
                     ],
                     "includePath": [
                       {
-                        "path": "E:/C++Projects/GLWrapper/include"
+                        "path": "E:/C++Projects/tools3d/include"
                       },
                       {
-                        "path": "E:/C++Projects/GLWrapper/glad/include"
+                        "path": "E:/C++Projects/tools3d/glad/include"
                       },
                       {
                         "path": "E:/msys64/mingw64/include"
@@ -56,10 +56,10 @@
                     ],
                     "includePath": [
                       {
-                        "path": "E:/C++Projects/GLWrapper/include"
+                        "path": "E:/C++Projects/tools3d/include"
                       },
                       {
-                        "path": "E:/C++Projects/GLWrapper/glad/include"
+                        "path": "E:/C++Projects/tools3d/glad/include"
                       },
                       {
                         "path": "E:/msys64/mingw64/include"
@@ -68,8 +68,12 @@
                     "isGenerated": false,
                     "language": "CXX",
                     "sources": [
-                      "src/HelperFuncs.cpp",
-                      "src/Loader.cpp"
+                      "src/Loader.cpp",
+                      "src/Mesh.cpp",
+                      "src/MeshManager.cpp",
+                      "src/StaticModel.cpp",
+                      "src/UBO.cpp",
+                      "src/VBO.cpp"
                     ]
                   }
                 ],
@@ -77,7 +81,7 @@
                 "linkLibraries": "-lassimp -lgcc_eh -lgcc_eh -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
                 "linkerLanguage": "CXX",
                 "name": "tools3d",
-                "sourceDirectory": "E:/C++Projects/GLWrapper",
+                "sourceDirectory": "E:/C++Projects/tools3d",
                 "type": "SHARED_LIBRARY"
               }
             ]
@@ -85,7 +89,7 @@
         ]
       }
     ],
-    "cookie": "0.8509927561606194",
+    "cookie": "0.6689952329912163",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

@@ -21,13 +21,11 @@ namespace doo
 			ObjId Vao;
 			ObjId Ebo;
 		};
-
 		struct ShaderSrcCode
 		{
 			std::string Code;
 			GLenum Type;
 		};
-
 		struct VertexLayoutInfo
 		{
 			u32 NumComponents;
@@ -36,8 +34,6 @@ namespace doo
 			GLenum Type;
 			GLboolean Normalized = 0;
 		};
-
-
 		struct InterleavedLayout
 		{
 			InterleavedLayout(u32 p_vertexDeclLength) : m_vertexDeclLength(p_vertexDeclLength)
@@ -73,18 +69,14 @@ namespace doo
 			u32 m_vertexDeclLength;
 		};
 
-		ObjId CreateProgram(ShaderSrcCode* p_code, u32 p_amount);
-		VboId CreateStaticVBO(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const InterleavedLayout& p_layout);
-
-
-		
+		ObjId CreateProgram(ShaderSrcCode* p_code, u32 p_amount);		
 		VboId CreateVBO(void* p_vertices, u32 p_vertSize, void* p_indices, u32 p_indexSize, const VertexLayoutInfo* p_layout, u32 p_amount, GLenum
 		                         p_accessModifier = GL_STATIC_DRAW);
 
 		template<typename TVerts>
-		VboId CreateStaticVBO(std::vector<TVerts> p_verts, std::vector<u32> p_indices, const InterleavedLayout& p_layout)
+		VboId CreateVBOFromVector(std::vector<TVerts> p_verts, std::vector<u32> p_indices, const VertexLayoutInfo* p_layout, u32 p_amount, GLenum p_accessModifier = GL_STATIC_DRAW)
 		{
-			return CreateStaticVBO(p_verts.data(), p_verts.data(), p_indices.data(), p_indices.size(), p_layout);
+			return CreateVBO(p_verts.data(), p_verts.size(), p_indices.data(), p_indices.size(), p_layout, p_amount, p_accessModifier);
 		}
 
 	}
