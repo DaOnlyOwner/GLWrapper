@@ -10,7 +10,9 @@ namespace doo
 {
 	namespace loader
 	{
-		Vertex createVertices(Mesh* p_myMesh, aiMesh* p_assMesh, const aiMatrix4x4& p_localTransform)
+
+		// TODO: 
+		/*Vertex createVertices(Mesh* p_myMesh, aiMesh* p_assMesh, const aiMatrix4x4& p_localTransform)
 		{
 			for (int i = 0; i < p_assMesh->mNumVertices; i++)
 			{
@@ -46,7 +48,7 @@ namespace doo
 			}
 		}
 
-		void createModel(aiNode* p_node, const aiScene* p_scene, Model* p_model, const aiMatrix4x4& p_parentTransform)
+		void createModel(aiNode* p_node, const aiScene* p_scene, MeshNode* p_model, const aiMatrix4x4& p_parentTransform)
 		{
 			aiMatrix4x4 localTransform = p_parentTransform * p_node->mTransformation;
 
@@ -67,15 +69,15 @@ namespace doo
 
 			for (u32 i = 0; i < p_node->mNumChildren; i++)
 			{
-				Model* toBeAdded = new Model();
-				std::unique_ptr<Model> ptr(toBeAdded);
+				MeshNode* toBeAdded = new MeshNode();
+				std::unique_ptr<MeshNode> ptr(toBeAdded);
 				createModel(p_node->mChildren[i], p_scene, toBeAdded, localTransform);
 				p_model->Children.push_back(std::move(ptr));
 			}
 		}
 
 		// TODO: Error handling
-		Model* LoadModel(const char* p_filename)
+		MeshNode* LoadModel(const char* p_filename)
 		{
 			Assimp::Importer importer;
 			const aiScene* scene = importer.ReadFile(p_filename, aiProcessPreset_TargetRealtime_MaxQuality);
@@ -83,13 +85,13 @@ namespace doo
 			if (!scene) throw ImportError("Couldn't load or read file: " + std::string(importer.GetErrorString()));
 			if (!scene->HasMeshes()) throw ImportError("Specified file contains no meshes.");
 
-			Model* model = new Model;
+			MeshNode* model = new MeshNode;
 
 
 			createModel(scene->mRootNode, scene, model, scene->mRootNode->mTransformation);
 			return model;
 		}
-
+		*/
 	}
 }
 

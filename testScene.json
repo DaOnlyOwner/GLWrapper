@@ -1,0 +1,22 @@
+// Model encapsulates a hierachy of meshes that are defined in the asset file. "meshNodes" exist to specify material parameters for meshes if you want. 
+// "materialGroup" - whatever you put into "materialGroup" will get the same material.
+// "applyToChildren" - if this is true the children of the mesh (defined in the asset file) will get the same material parameters.
+// It doesn't matter if a mesh is a children of another mesh, "meshNodes" knows no hierachy.
+
+{
+    "nodeType" : "staticScene",
+    "children" :
+    [
+        {
+            "nodeType" : "model",
+            "filename" : "testScene.fbx"
+            //,
+            //"meshNodes" : 
+            //[
+            //    {"identifier" : "vase", "material": "...", "applyMatToChildren" : false, "materialGroup" : [/* Same as outside */]},
+            //    {"identifier" : "plant", "material": "...", "applyMatToChildren" : false, "materialGroup" : ["otherPlant", "superPlant", "etc."]}
+            //]
+            // ^This will come soon TM.
+        }
+    ]
+}

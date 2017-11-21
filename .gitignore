@@ -34,3 +34,5 @@
 build/
 .vs/
 .vscode/
+
+.vscode/.cmaketools.json
