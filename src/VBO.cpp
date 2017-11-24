@@ -15,7 +15,7 @@ inline doo::ObjId compileShader(const char* p_code, GLenum p_type)
 		throw doo::gl::ShaderCompileError("Shader didn't compile successfully:\n" + std::string(log));
 	}
 
-	return { shaderId };
+	return shaderId;
 }
 
 doo::ObjId doo::gl::CreateProgram(ShaderSrcCode* p_code, u32 p_amount)
@@ -24,7 +24,7 @@ doo::ObjId doo::gl::CreateProgram(ShaderSrcCode* p_code, u32 p_amount)
 	
 	ObjId* savedIds = new ObjId[p_amount];
 
-	for(int i = 0; i<p_amount; i++)
+	for(u32 i = 0; i<p_amount; i++)
 	{
 		ObjId shaderId = compileShader(p_code[i].Code.c_str(), p_code[i].Type);
 		savedIds[i] = shaderId;
@@ -41,7 +41,7 @@ doo::ObjId doo::gl::CreateProgram(ShaderSrcCode* p_code, u32 p_amount)
 		throw ShaderLinkerError("Linking of shaders failed:\n" + std::string(log));
 	}
 
-	for(int i = 0; i<p_amount; i++)
+	for(u32 i = 0; i<p_amount; i++)
 	{
 		glDetachShader(programOut, savedIds[i]);
 		glDeleteShader(savedIds[i]);
@@ -67,7 +67,7 @@ doo::gl::VboId doo::gl::CreateVBO(void* p_vertices, u32 p_vertSize, void* p_indi
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, p_indexSize, p_indices, p_accessModifier);
 
-	for (int i = 0; i<p_amount; i++)
+	for (u32 i = 0; i<p_amount; i++)
 	{
 		const VertexLayoutInfo& info = p_layout[i];
 		glVertexAttribPointer(i, info.NumComponents, info.Type, info.Normalized, info.Stride, &info.Offset);

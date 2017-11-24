@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
+set (CMAKE_CXX_STANDARD 11)
+
 file(GLOB_RECURSE SOURCES glad/*.c src/*.cpp)
 file(GLOB_RECURSE INCLUDES include/*.h)
 
@@ -21,9 +23,11 @@ target_link_libraries(tools3d ${ASSIMP_LIBRARIES})
 #target_include_directories(tools3d PUBLIC ${GLM_INCLUDE_DIRS})
 #target_link_libraries(tools3d ${GLM_LIBRARY})
 
-# JSONCPP - for parsing the scene file.
-#target_include_directories(tools3d PRIVATE ${JSONCPP_INCLUDE_DIRS})
-#target_link_libraries(tools3d ${JSONCPP_LIBRARY})
+# Enable compiler warnings for gcc
+if ( CMAKE_COMPILER_IS_GNUCXX )
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+endif ( CMAKE_COMPILER_IS_GNUCXX )
+
 
 
 install(TARGETS tools3d

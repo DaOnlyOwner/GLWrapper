@@ -1,15 +1,12 @@
 #include "tools3d/MeshManager.h"
+#include "glad/glad.h"
+#include <cassert>
 
 
 namespace doo
 {
 	namespace gl
 	{
-		MeshManager::MeshManager(): m_standardInterleaved(2)
-		{
-			m_standardInterleaved.Add(3).Add(3);
-		}
-
 		void MeshManager::BeginStaticGeometry()
 		{
 			m_canAddStaticGeometry = true;
@@ -33,10 +30,10 @@ namespace doo
 		void MeshManager::EndStaticGeometry()
 		{
 			m_canAddStaticGeometry = false;
-			const VertexLayoutInfo* layoutInfo = m_standardInterleaved.GetInterleavedLayoutInfo();
+			InterleavedLayout layout(2);
+			layout.Add(3).Add(3);
 
-
-			CreateVBOFromVector(m_verticesStaticGeometry, m_indicesStaticGeometry, layoutInfo, m_standardInterleaved.GetNumAttribPtrs(), GL_STATIC_DRAW);
+			CreateVBOFromVector(m_verticesStaticGeometry, m_indicesStaticGeometry, layout.GetInterleavedLayoutInfo(), layout.GetNumAttribPtrs(), GL_STATIC_DRAW);
 
 			m_indicesStaticGeometry.clear();
 			m_indicesStaticGeometry.shrink_to_fit();

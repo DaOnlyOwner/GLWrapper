@@ -11,7 +11,7 @@ namespace doo
 			glBindBuffer(GL_UNIFORM_BUFFER, ubo);
 			glBufferData(GL_UNIFORM_BUFFER, p_dataSize, p_data, p_accessModifiers);
 			glBindBuffer(GL_UNIFORM_BUFFER, 0);
+			return ubo;
 		}
-
 	}
 }

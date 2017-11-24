@@ -21,20 +21,4 @@ namespace doo
 
 	typedef GLfloat f32;
 	typedef GLdouble f64;
-
-
-	// TODO: This shouldn't go in here probably...
-
-	struct Vec2
-	{
-		f32 x, y;
-	};
-	struct Vec3
-	{
-		f32 x, y, z;
-	};
-	struct Vec4
-	{
-		f32 x, y, z, v;
-	};
 }
