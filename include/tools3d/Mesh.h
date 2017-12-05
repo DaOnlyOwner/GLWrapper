@@ -1,7 +1,8 @@
 #pragma once
 #include <vector>
 #include "Common.h"
-#include "Vector.h"
+#include "glm/glm.hpp"
+#include "Transform.h"
 
 namespace doo
 {
@@ -9,8 +10,8 @@ namespace doo
 	{
 		struct Vertex
 		{
-			math::Vec3 Position;
-			math::Vec3 Normal;
+			glm::vec3 Position;
+			glm::vec3 Normal;
 			//f32 Tangent[3];
 			//f32 Bitangent[3];
 			//f32 TextCoords[2];
@@ -57,6 +58,7 @@ namespace doo
 			u32 m_offsetIntoEBO;
 			std::string m_name;
 
+			rl::Transform m_transform;
 
 
 		};

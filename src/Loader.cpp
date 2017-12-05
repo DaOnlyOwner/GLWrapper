@@ -7,6 +7,8 @@
 #include "assimp/mesh.h"
 #include "assimp/scene.h"
 
+#include "glm/glm.hpp"
+
 namespace doo
 {
 	namespace loader
@@ -20,13 +22,13 @@ namespace doo
 
 				aiVector3D assPos = p_localTransform * p_assMesh->mVertices[i];
 
-				math::Vec3 pos{ assPos.x, assPos.y, assPos.z };
+				glm::vec3 pos{ assPos.x, assPos.y, assPos.z };
 				v.Position = pos;
 
 				aiMatrix4x4 normalMatrix = p_localTransform;
 
 				aiVector3D assNormal = normalMatrix.Inverse().Transpose() * p_assMesh->mNormals[i];
-				math::Vec3 normal{ assNormal.x, assNormal.y, assNormal.z };
+				glm::vec3 normal{ assNormal.x, assNormal.y, assNormal.z };
 				v.Normal = normal;
 
 				p_vertices.push_back(v);

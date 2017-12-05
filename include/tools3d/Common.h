@@ -6,6 +6,7 @@
 #define MAKE_EXCEPTION(name) struct name : std::logic_error {explicit name(const std::string& arg) :logic_error(arg) {} }
 
 
+
 namespace doo
 {
 
